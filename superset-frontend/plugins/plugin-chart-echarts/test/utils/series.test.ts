@@ -51,29 +51,25 @@ describe('extractSeries', () => {
         abc: 5,
       },
     ];
-    const totalStackedValues = [2, 12, 6];
-    expect(extractSeries(data, { totalStackedValues })).toEqual([
-      [
-        {
-          id: 'Hulk',
-          name: 'Hulk',
-          data: [
-            ['2000-01-01', null],
-            ['2000-02-01', 2],
-            ['2000-03-01', 1],
-          ],
-        },
-        {
-          id: 'abc',
-          name: 'abc',
-          data: [
-            ['2000-01-01', 2],
-            ['2000-02-01', 10],
-            ['2000-03-01', 5],
-          ],
-        },
-      ],
-      totalStackedValues,
+    expect(extractSeries(data)).toEqual([
+      {
+        id: 'Hulk',
+        name: 'Hulk',
+        data: [
+          ['2000-01-01', null],
+          ['2000-02-01', 2],
+          ['2000-03-01', 1],
+        ],
+      },
+      {
+        id: 'abc',
+        name: 'abc',
+        data: [
+          ['2000-01-01', 2],
+          ['2000-02-01', 10],
+          ['2000-03-01', 5],
+        ],
+      },
     ]);
   });
 

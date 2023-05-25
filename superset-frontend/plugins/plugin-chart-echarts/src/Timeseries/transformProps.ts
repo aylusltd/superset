@@ -209,7 +209,7 @@ export default function transformProps(
       formatter,
       showValue,
       onlyTotal,
-      totalStackedValues: sortedTotalValues,
+      totalStackedValues,
       showValueIndexes,
       thresholdValues,
       richTooltip,
