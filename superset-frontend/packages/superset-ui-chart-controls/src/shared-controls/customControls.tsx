@@ -61,15 +61,6 @@ const xAxisSortVisibility = ({ controls }: { controls: ControlStateMapping }) =>
   ensureIsArray(controls?.groupby?.value).length === 0 &&
   ensureIsArray(controls?.metrics?.value).length === 1;
 
-const xAxisMultiSortVisibility = ({
-  controls,
-}: {
-  controls: ControlStateMapping;
-}) =>
-  !isTemporal(controls) &&
-  (!!ensureIsArray(controls?.groupby?.value).length ||
-    ensureIsArray(controls?.metrics?.value).length > 1);
-
 export const xAxisSortControl = {
   name: 'x_axis_sort',
   config: {
