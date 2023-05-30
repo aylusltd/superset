@@ -199,24 +199,12 @@ class MySQLEngineSpec(BaseEngineSpec, BasicParametersMixin):
     def adjust_database_uri(
         cls, uri: URL, selected_schema: Optional[str] = None
     ) -> URL:
-        if selected_schema:
-            uri = uri.set(database=parse.quote(selected_schema, safe=""))
-
-        return uri
-
-    @classmethod
-    def adjust_engine_params(
-        cls,
-        uri: URL,
-        connect_args: Dict[str, Any],
-        catalog: Optional[str] = None,
-        schema: Optional[str] = None,
-    ) -> Tuple[URL, Dict[str, Any]]:
         uri, new_connect_args = super(
             MySQLEngineSpec, MySQLEngineSpec
-        ).adjust_engine_params(uri, connect_args, catalog, schema)
-        if schema:
-            uri = uri.set(database=parse.quote(schema, safe=""))
+        ).adjust_database_uri(uri)
+
+        if selected_schema:
+            uri = uri.set(database=parse.quote(selected_schema, safe=""))
 
         return uri, new_connect_args
 

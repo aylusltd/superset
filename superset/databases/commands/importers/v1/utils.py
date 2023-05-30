@@ -22,7 +22,6 @@ from sqlalchemy.orm import Session
 
 from superset import security_manager
 from superset.commands.exceptions import ImportFailedError
-from superset.databases.ssh_tunnel.models import SSHTunnel
 from superset.models.core import Database
 
 

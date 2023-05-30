@@ -192,7 +192,7 @@ class TestDatabaseModel(SupersetTestCase):
         SupersetTestCase.is_module_installed("MySQLdb"), "mysqlclient not installed"
     )
     @mock.patch("superset.models.core.create_engine")
-    def test_adjust_engine_params_mysql(self, mocked_create_engine):
+    def test_adjust_database_uri_mysql(self, mocked_create_engine):
         model = Database(
             database_name="test_database1",
             sqlalchemy_uri="mysql://user:password@localhost",

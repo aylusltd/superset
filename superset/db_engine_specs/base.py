@@ -1026,7 +1026,6 @@ class BaseEngineSpec:  # pylint: disable=too-many-public-methods
         packages.
         """
         return uri, {
-            **connect_args,
             **cls.enforce_uri_query_params.get(uri.get_driver_name(), {}),
         }
 
