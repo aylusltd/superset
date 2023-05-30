@@ -204,6 +204,7 @@ class MySQLEngineSpec(BaseEngineSpec, BasicParametersMixin):
 
         return uri
 
+    @classmethod
     def adjust_engine_params(
         cls,
         uri: URL,
